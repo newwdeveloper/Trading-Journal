@@ -1,11 +1,13 @@
 import SideBar from "./SideBar";
-import InputContainer from "./InputContainer";
+import { Outlet } from "react-router-dom";
 
 const MainContainer = () => {
   return (
     <div className="flex">
       <SideBar />
-      <InputContainer />
+      <div className="w-full">
+        <Outlet />
+      </div>
     </div>
   );
 };

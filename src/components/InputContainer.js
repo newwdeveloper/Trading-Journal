@@ -4,8 +4,8 @@ import SellSideInput from "./SellSideInput";
 
 const InputContainer = () => {
   return (
-    <div className="w-9/12 border-2 ">
-      <div className="pt-9 border-2">
+    <div className="w-12/12 border-2 ">
+      <div className=" border-2">
         <h2 className="text-4xl text-center p-5">Enter your Trade Details</h2>
         <p className=" text-lg text-center pb-3 ">
           Enter your trade details in the box to easily track and manage your

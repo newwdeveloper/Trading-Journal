@@ -5,6 +5,7 @@ import InputContainer from "./components/InputContainer";
 import NoDisplay from "./components/NoDisplay";
 import { Provider } from "react-redux";
 import appStore from "./components/appStore";
+import DetailedTrade from "./components/DetailedTrade";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -19,6 +20,10 @@ function App() {
         {
           path: "/InputTrade",
           element: <InputContainer />,
+        },
+        {
+          path: "/DetailedTrade",
+          element: <DetailedTrade />,
         },
       ],
     },

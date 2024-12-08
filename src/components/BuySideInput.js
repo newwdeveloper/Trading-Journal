@@ -1,7 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { addInput } from "./InputSlice";
 
 const BuySideInput = () => {
-  const [entryData, setEntryData] = useState({});
+  const dispatch = useDispatch();
+
   const [totalAmount, setTotalAmount] = useState(0); // State for total amount
   const buyDateRef = useRef();
   const stockNameRef = useRef();
@@ -29,8 +32,17 @@ const BuySideInput = () => {
       referanceBuyImg: referenceBuyImgRef.current.value,
       reasonToBuy: reasonToBuyRef.current.value,
     };
-    setEntryData(newBuyEntry);
-    console.log("Entry Data: ", entryData);
+
+    dispatch(addInput(newBuyEntry));
+    buyDateRef.current.value = "";
+    stockNameRef.current.value = "";
+    buyPriceRef.current.value = "";
+    qtyRef.current.value = "";
+    referenceBuyImgRef.current.value = "";
+    reasonToBuyRef.current.value = "";
+
+    // Reset totalAmount to 0
+    setTotalAmount(0);
   };
 
   useEffect(() => {
